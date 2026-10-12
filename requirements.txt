@@ -1,0 +1,25 @@
+# PyTorch 2.1.2 + CUDA 11.8 (see scripts/setup_env.sh for the full, tested install)
+torch==2.1.2
+torchvision==0.16.2
+numpy<2
+scipy==1.11.4
+trimesh==4.0.10
+smplx==0.1.28
+chumpy==0.70
+matplotlib==3.7.3
+spacy==3.7.2
+tqdm
+blobfile
+ftfy
+regex
+gdown
+scikit-learn
+einops
+tensorboard
+clip @ git+https://github.com/openai/CLIP.git
+h5py
+pyrender
+PyOpenGL==3.1.7
+imageio
+imageio-ffmpeg
+opencv-python-headless<4.11

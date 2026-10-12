@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# Data is NOT redistributed: BEHAVE / SMPL+H licences, HOI-Diff annotations (see README > Setup)
+dataset/
+body_models/
+
+# Downloaded dependencies and run artefacts
+glove/
+checkpoints/
+save/
+logs/
+results/*.npz
+*.mp4
+!assets/*.mp4
+!assets/videos/**/*.mp4
