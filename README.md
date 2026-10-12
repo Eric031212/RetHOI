@@ -27,7 +27,7 @@ We present **RetHOI**, a framework for generating realistic 3D human-object inte
 
 ## 🧠 Method
 
-<div align="center"><img src="assets/pipeline.png" width="95%"></div>
+<div align="center"><img src="assets/method.svg" width="100%"></div>
 
 | Component | Description | Code |
 |---|---|---|
@@ -38,7 +38,9 @@ We present **RetHOI**, a framework for generating realistic 3D human-object inte
 **Training objective.** `L = L_diffusion + λ₁ L_contrast + λ₂ L_smooth`, with λ₁ = 0.1, λ₂ = 0.05 and `L_smooth = E‖x̂_{t+1} − x̂_t‖²`.
 
 <details>
-<summary><b>Architecture figures</b></summary>
+<summary><b>Figures from the thesis</b></summary>
+
+<img src="assets/pipeline.png" width="100%">
 
 | PRDM (HOI generation) | CSGM / APDM (affordance prediction) |
 |---|---|
