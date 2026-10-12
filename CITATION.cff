@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "RetHOI: Text-Driven 3D Human-Object Interaction via Parallel Retentive Diffusion and Spectral Refinement"
+authors:
+  - family-names: Xie
+    given-names: Hongtao
+type: software
+license: MIT
+repository-code: "https://github.com/Eric031212/RetHOI"
+date-released: "2026-10-12"
+keywords:
+  - human-object interaction
+  - motion generation
+  - diffusion models
+  - RetNet
+preferred-citation:
+  type: thesis
+  thesis-type: "Bachelor's Thesis"
+  title: "RetHOI: Text-Driven 3D Human-Object Interaction via Parallel Retentive Diffusion and Spectral Refinement"
+  authors:
+    - family-names: Xie
+      given-names: Hongtao
+  institution:
+    name: "Beijing Normal-Hong Kong Baptist University"
+  year: 2025
+  notes: "Supervised by Hui Zhang"
+references:
+  - type: conference-paper
+    title: "HOI-Diff: Text-Driven Synthesis of 3D Human-Object Interactions using Diffusion Models"
+    authors:
+      - family-names: Peng
+        given-names: Xiaogang
+      - family-names: Xie
+        given-names: Yiming
+      - family-names: Wu
+        given-names: Zizhao
+      - family-names: Jampani
+        given-names: Varun
+      - family-names: Sun
+        given-names: Deqing
+      - family-names: Jiang
+        given-names: Huaizu
+    collection-title: "Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR) Workshops"
+    start: 2878
+    end: 2888
+    year: 2025

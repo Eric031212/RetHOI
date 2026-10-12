@@ -160,16 +160,17 @@ The public HOI-Diff release could not be run end to end. The following correctio
 
 ## 📝 Citation
 
-If you find this work useful, please cite:
+If you find this work useful, please cite it (GitHub's **"Cite this repository"** button, generated from [`CITATION.cff`](CITATION.cff), gives the same entry):
 
 ```bibtex
-@thesis{xie2025rethoi,
+@mastersthesis{xie2025rethoi,
   title  = {{RetHOI}: Text-Driven {3D} Human-Object Interaction via Parallel Retentive Diffusion and Spectral Refinement},
   author = {Xie, Hongtao},
-  school = {Beijing Normal -- Hong Kong Baptist University},
+  school = {Beijing Normal--Hong Kong Baptist University},
   type   = {Bachelor's Thesis},
-  note   = {Supervised by Hui Zhang. Code: \url{https://github.com/Eric031212/RetHOI}},
-  year   = {2025}
+  year   = {2025},
+  note   = {Supervised by Hui Zhang},
+  url    = {https://github.com/Eric031212/RetHOI}
 }
 ```
 
