@@ -38,9 +38,9 @@
 <text x="752" y="120" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1F4E8C" text-anchor="middle">Cross-Retention ×2</text>
 <text x="752" y="142" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#59606E" text-anchor="middle">bidirectional, O(N)</text>
 <text x="752" y="177" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#1D2330" text-anchor="middle">H ← H + 0.5·Ret(Q<tspan baseline-shift='sub' font-size='10'>h</tspan>, K<tspan baseline-shift='sub' font-size='10'>o</tspan>, V<tspan baseline-shift='sub' font-size='10'>o</tspan>)</text>
-<text x="752" y="199" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#1D2330" text-anchor="middle">O ← O + 0.5·Ret(Q<tspan baseline-shift='sub' font-size='10'>o</tspan>, K<tspan baseline-shift='sub' font-size='10'>h</tspan>, V<tspan baseline-shift='sub' font-size='10'>h</tspan>)</text>
-<path d="M735,220 L735,280" fill="none" stroke="#1F4E8C" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah)"/>
-<path d="M770,280 L770,220" fill="none" stroke="#1F4E8C" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah)"/>
+<path d="M735,195 L735,267" fill="none" stroke="#1F4E8C" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah)"/>
+<path d="M770,267 L770,195" fill="none" stroke="#1F4E8C" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#ah)"/>
+<text x="752" y="293" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#1D2330" text-anchor="middle">O ← O + 0.5·Ret(Q<tspan baseline-shift='sub' font-size='10'>o</tspan>, K<tspan baseline-shift='sub' font-size='10'>h</tspan>, V<tspan baseline-shift='sub' font-size='10'>h</tspan>)</text>
 <rect x="890" y="95" width="125" height="70" rx="10" fill="#E8F0FB" stroke="#3B6FB6" stroke-width="1.6"/>
 <text x="952.5" y="126.0" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#3B6FB6" text-anchor="middle">RetNet ×4</text>
 <text x="952.5" y="145.0" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#59606E" text-anchor="middle">human</text>
