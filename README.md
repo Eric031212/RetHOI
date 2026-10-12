@@ -6,8 +6,6 @@
 
 **Hongtao Xie** · Supervised by **Prof. Amy Hui Zhang**
 
-Beijing Normal – Hong Kong Baptist University (BNBU) · Bachelor's Thesis, 2025
-
 <a href="#-citation"><img src="https://img.shields.io/badge/📝_Cite-RetHOI-blue"></a>
 <img src="https://img.shields.io/badge/PyTorch-2.1-EE4C2C?logo=pytorch&logoColor=white">
 <img src="https://img.shields.io/badge/Dataset-BEHAVE-orange">
