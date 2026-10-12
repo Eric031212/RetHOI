@@ -23,7 +23,15 @@ Beijing Normal – Hong Kong Baptist University (BNBU) · Bachelor's Thesis, 202
 
 ## 📖 Abstract
 
-We present **RetHOI**, a framework for generating realistic 3D human-object interactions (HOIs) from natural-language descriptions. Existing diffusion-based approaches suffer from three limitations: the quadratic cost of Transformer attention, which restricts temporal sequence modeling; jittery contact trajectories, which undermine physical plausibility; and semantic drift between the text description and the generated motion. RetHOI addresses these limitations with three components built on top of HOI-Diff. First, the human and object motions are synthesized by parallel **retentive** branches whose multi-scale retention, with learnable exponential decay, captures both short-term contact dynamics and long-term trajectory patterns; the branches exchange information through bidirectional **cross-retention**. Second, the contact trajectories used for affordance-guided correction are refined by a bank of **multi-scale, multi-orientation Gabor filters** with learnable fusion weights, which attenuates high-frequency jitter while preserving the motion. Third, **InfoNCE contrastive alignment** with CLIP text embeddings is applied at both the affordance-prediction and the motion-synthesis stage. We evaluate the framework on the BEHAVE dataset with a full set of ablations.
+Type a sentence like *"someone is dragging the chair across the floor"*, and get back a 3D person **and** the chair moving together, hands on the backrest, chair sliding along the ground. That's the job: text-driven 3D human-object interaction (HOI) synthesis.
+
+RetHOI is my bachelor's thesis project. It starts from [HOI-Diff](https://github.com/neu-vi/HOI-Diff) and pokes at three things that bugged me about it:
+
+- 🐢 **Attention is quadratic in sequence length.** So the motion backbone gets swapped for **RetNet**: retention with a learnable exponential decay per head, so some heads focus on fast hand–object contact and others on the slow overall trajectory. The human and object branches talk to each other through **cross-retention**.
+- 🫨 **Contacts jitter.** The predicted contact trajectories go through a **multi-scale, multi-orientation Gabor filter bank** (40 filters, learnable fusion) before they steer the motion. The goal is to kill the high-frequency wobble and keep the actual movement.
+- 🤷 **Motions sometimes ignore half the prompt.** **InfoNCE contrastive alignment** with CLIP text embeddings is added at *both* stages: what gets touched (affordance) and how it moves (motion).
+
+Everything runs as one pipeline: affordance prediction → guided motion diffusion → SMPL body meshes plus the real scanned object. The renders below are real model outputs as full meshes, no more stick figures. 🎬
 
 ## 🧠 Method
 
@@ -55,10 +63,6 @@ Seven BEHAVE test prompts, one per object category. Top row: ground truth; botto
 <div align="center"><img src="assets/comparison.gif" width="100%"></div>
 
 Full-resolution video: [`assets/comparison.mp4`](assets/comparison.mp4). Individual clips: [`assets/videos/`](assets/videos).
-
-## 📊 Quantitative Results
-
-⏳ The full test-set evaluation of all five models (RetHOI, HOI-Diff and three ablations) is being finalised; this section will be updated with the measured numbers.
 
 ## 🛠️ Setup
 
@@ -157,7 +161,7 @@ The public HOI-Diff release could not be run end to end. The following correctio
 - **Affordance format.** `get_affordance.py` stores 8 joints as `(flag, x, y, z)`, whereas the APDM dataset indexed 22 joints in `(x, y, z, flag)` order; every APDM training sample was silently discarded.
 - **Diffusion schedule.** The APDM was trained with a 1000-step schedule and sampled with a 500-step one.
 - **Guidance.** Samples without any predicted contact were pulled towards an arbitrary object point, and the guidance retained its autograd graph across all steps (GPU memory leak).
-- **Missing evaluator.** HOI-Diff did not release its BEHAVE evaluator; `eval/` provides one. Its text encoder is GloVe + BiGRU rather than CLIP, so that it cannot favour the CLIP-space contrastive loss. Consequently, the numbers reported here are not directly comparable with those printed in the HOI-Diff paper.
+- **Missing evaluator.** HOI-Diff did not release its BEHAVE evaluator; `eval/` provides one. Its text encoder is GloVe + BiGRU rather than CLIP, so that it cannot favour the CLIP-space contrastive loss. Numbers from this evaluator are therefore not directly comparable with those printed in the HOI-Diff paper.
 - **Robustness.** Training now stops at `--num_steps`; the sampling script, broken imports, deprecated NumPy aliases, the missing PointNet++ import (with a pure-PyTorch fallback) and the `bps_torch` build dependency were fixed.
 
 ## 📝 Citation
